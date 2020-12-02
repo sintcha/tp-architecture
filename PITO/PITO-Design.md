@@ -22,7 +22,7 @@ Storage : Base de donné sqlLite
 
 127.0.0.1:8080/vols/<name:user_name> : liste des vols réservés à mon nom
 
-127.0.0.1:8080/vols/<id:id> : Post sur le billet avec l'id correspondant on change alors la valeur de la réservation à true et le nom de l'utilisateur 
+127.0.0.1:8080/vols/<id:name> : Post sur le billet avec l'id correspondant on change alors la valeur de la réservation à true et le nom de l'utilisateur 
 
 ## Modèle de donnée
 
