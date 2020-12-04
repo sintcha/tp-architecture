@@ -10,24 +10,24 @@ db = SQLAlchemy(app)
 
 class TicketModel(db.Model):
 	id = db.Column(db.Integer, primary_key=True)#sqlite_autoincrement=True)
-	date_entree_api = db.Column(db.String, nullable=False)
-	date_departure = db.Column(db.String, nullable=False)
-	date_arrival = db.Column(db.String, nullable=False)
+	date_entree_api = db.Column(db.String)
+	date_departure = db.Column(db.String)
+	date_arrival = db.Column(db.String)
 	reservation = db.Column(db.Boolean, nullable=False)
-	code_depart = db.Column(db.String(3), nullable=False)
-	code_destination = db.Column(db.String(3), nullable=False)
-	prix = db.Column(db.Integer, nullable=False)
-	name = db.Column(db.String(100), nullable=False)
+	trajet_id = db.Column(db.Integer, nullable=False)
+	prix = db.Column(db.Integer)
+	name = db.Column(db.String(100))
 
 	def __repr__(self):
-		return f("Ticket (id = {self.id}, date_entree_api = {self.date_entree_api}, reservation = {self.reservation}, code_depart{self.code_depart}, code_destination = {self.code_destination}, prix = {self.prix}, name = {self.name})")
+		return f("Ticket (id = {self.id}, date_entree_api = {self.date_entree_api}, reservation = {self.reservation}, prix = {self.prix}, name = {self.name})")
 
 class CodeModel(db.Model):
 	id = db.Column(db.Integer, primary_key=True)#sqlite_autoincrement=True)
-	code = db.Column(db.String(3), nullable=False)
+	code_depart = db.Column(db.String(3), nullable=False)
+	code_destination = db.Column(db.String(3), nullable=False)
 
 	def __repr__(self):
-		return f("Code (code = {self.code_destination})")
+		return f("Code (id = {self.id}, code_depart{self.code_depart}, code_destination = {self.code_destination})")
 
 
 db.create_all()
@@ -69,7 +69,8 @@ resource_fields = {
 
 resource_fields_code = {
 	'id': fields.Integer,
-	'code': fields.String
+	'code_depart': fields.String,
+	'code_destination': fields.String,
 }
 
 class Ticket(Resource):
@@ -187,15 +188,15 @@ class Find_Ticket_by_max_price(Resource):
 			abort(404, message="Could not find Ticket with that arrival date")
 		return result
 
-#class Find_available_departure(Resource):
-#	@marshal_with(resource_fields_code)
-#	def get(self):
-#		allCodes = CodeModel.query.filter_by().all()
-#		for i in range(len(allCodes)) :
-#			print(allCodes[i].code)
-#		if not allCodes:
-#			abort(404, message="Could not find Codes")
-#		return allCodes
+# class Find_available_departure(Resource):
+# 	@marshal_with(resource_fields_code)
+# 	def get(self):
+# 		allCodes = CodeModel.query.filter_by().all()
+# 		for i in range(len(allCodes)) :
+# 			if print(allCodes[i].code)
+# 		if not allCodes:
+# 			abort(404, message="Could not find Codes")
+# 		return allCodes
 
 class All_Ticket(Resource):
 	@marshal_with(resource_fields)
