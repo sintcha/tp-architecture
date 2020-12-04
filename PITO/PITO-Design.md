@@ -51,7 +51,7 @@ Storage : Base de donné sqlLite
 
 127.0.0.1:5000/Ticket_price/<string:price>: liste des billets selon le prix spécifié
 
-## Modèle de données
+##  Entité du Modèle logique de données implémenté
 
 Billet :
 
