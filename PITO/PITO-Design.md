@@ -57,16 +57,16 @@ Billet :
 
 - Int : ID Billet
 - Int : ID Client
+- Int : ID Trajet
 - Datetime : Date d'entrée dans l'api
 - Datetime : Date de départ du vol
 - Datetime : Date d'arrivée du vol
-- Int : Identifiant du Trajet
 - Int : Prix
 
 
 Trajet :
 
-- Int : ID
+- Int : ID Trajet
 - Int : Stock
 - String : Code_Destination
 - String : Code_Depart
