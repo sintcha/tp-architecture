@@ -22,12 +22,12 @@ class TicketModel(db.Model):
 		return f("Ticket (id = {self.id}, date_entree_api = {self.date_entree_api}, reservation = {self.reservation}, prix = {self.prix}, name = {self.name})")
 
 class CodeModel(db.Model):
-	id = db.Column(db.Integer, primary_key=True)#sqlite_autoincrement=True)
+	trajet_id = db.Column(db.Integer, primary_key=True)#sqlite_autoincrement=True)
 	code_depart = db.Column(db.String(3), nullable=False)
 	code_destination = db.Column(db.String(3), nullable=False)
 
 	def __repr__(self):
-		return f("Code (id = {self.id}, code_depart{self.code_depart}, code_destination = {self.code_destination})")
+		return f("Code (id = {self.trajet_id}, code_depart{self.code_depart}, code_destination = {self.code_destination})")
 
 
 db.create_all()
@@ -131,31 +131,6 @@ class Find_Ticket_by_id(Resource):
 			abort(404, message="Could not find Ticket with that id")
 		return result
 	
-
-class Find_Ticket_by_dest(Resource):
-	@marshal_with(resource_fields)
-	def get(self, code_destination):
-		result = TicketModel.query.filter_by(code_destination=code_destination).all()
-		if not result:
-			abort(404, message="Could not find Ticket with that destination")
-		return result
-
-class Find_Ticket_by_dep(Resource):
-	@marshal_with(resource_fields)
-	def get(self, code_depart):
-		result = TicketModel.query.filter_by(code_depart=code_depart).all()
-		if not result:
-			abort(404, message="Could not find Ticket with that departure")
-		return result
-
-class Find_Ticket_by_dep(Resource):
-	@marshal_with(resource_fields)
-	def get(self, code_depart):
-		result = TicketModel.query.filter_by(code_depart=code_depart).all()
-		if not result:
-			abort(404, message="Could not find Ticket with that departure")
-		return result
-
 class Find_Ticket_by_date(Resource):
 	@marshal_with(resource_fields)
 	def get(self, date):
@@ -188,15 +163,18 @@ class Find_Ticket_by_max_price(Resource):
 			abort(404, message="Could not find Ticket with that arrival date")
 		return result
 
-# class Find_available_departure(Resource):
-# 	@marshal_with(resource_fields_code)
-# 	def get(self):
-# 		allCodes = CodeModel.query.filter_by().all()
-# 		for i in range(len(allCodes)) :
-# 			if print(allCodes[i].code)
-# 		if not allCodes:
-# 			abort(404, message="Could not find Codes")
-# 		return allCodes
+#  class Find_available_departure(Resource):
+#  	@marshal_with(resource_fields_code)
+#  	def get(self):
+#  		allCodes = CodeModel.query.filter_by().all()
+# 		result = TicketModel.query.filter_by(code_destination=code_destination).all()
+
+		
+#  		for i in range(len(allCodes)) :
+#  			if print(allCodes[i].code)
+#  		if not allCodes:
+#  			abort(404, message="Could not find Codes")
+#  		return allCodes
 
 class All_Ticket(Resource):
 	@marshal_with(resource_fields)
