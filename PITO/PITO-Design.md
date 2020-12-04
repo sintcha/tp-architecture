@@ -41,9 +41,7 @@ Storage : Base de donné sqlLite
 
 127.0.0.1:5000/Ticket_id/<int:billet_id>: Afficher le billet avec l'id spécifié
 
-127.0.0.1:5000/Ticket_departure/<string:code_depart>: liste des billets avec le le lieu de départ spécifié
-
-127.0.0.1:5000/Ticket_destination/<string:code_destination>: liste des billets avec le lieu d'arrivée spécifié
+127.0.0.1:5000/Ticket_departure/<int:id_trajet>: liste des billets avec le le lieu de départ spécifié
 
 127.0.0.1:5000/Ticket_entree_api/<string:date_entree_api>: liste des billets ajoutés dans l'api à la date correspondante
 
@@ -61,9 +59,7 @@ Billet :
 - Datetime : Date d'entrée dans l'api
 - Datetime : Date de départ du vol
 - Datetime : Date d'arrivée du vol
-- Boolean : Reservation
-- String : Code de départ 
-- String : Code de destination
+- Int : Identifiant du Trajet
 - Int : Prix
 - String : User name
 
@@ -71,8 +67,15 @@ Billet :
 Trajet :
 
 - Int : ID
+- Int : Stock
 - String : Code_Destination
 - String : Code_Depart
+
+Client :
+
+- Int : ID
+- String : Nom
+
 
 ## Base de donnée
 
