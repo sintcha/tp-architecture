@@ -2,7 +2,7 @@
 
 ## Architecture
 
-![Features](tp-architecture/blob/IAD-PITO/static/schema_archi.png)
+![Features](IAD-PITO/static/schema_archi.png)
 
 ## Stack technique
 
