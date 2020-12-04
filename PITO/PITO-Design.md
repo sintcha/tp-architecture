@@ -73,7 +73,7 @@ Trajet :
 
 Client :
 
-- Int : ID
+- Int : ID Client
 - String : Nom
 
 
