@@ -47,3 +47,10 @@ Billet :
 - String : Code de destination
 - Int : Prix
 - String : User name
+
+
+Trajet :
+
+- Int : ID
+- Code_Destination
+- Code_Depart
