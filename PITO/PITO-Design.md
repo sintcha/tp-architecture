@@ -52,5 +52,9 @@ Billet :
 Trajet :
 
 - Int : ID
-- Code_Destination
-- Code_Depart
+- String : Code_Destination
+- String : Code_Depart
+
+## Base de donnée
+
+![Features](static/bdd.png)
