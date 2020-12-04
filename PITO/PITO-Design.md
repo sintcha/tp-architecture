@@ -51,7 +51,7 @@ Storage : Base de donné sqlLite
 
 127.0.0.1:5000/Ticket_price/<string:price>: liste des billets selon le prix spécifié
 
-## Modèle de donnée
+## Modèle de données
 
 Billet :
 
@@ -75,6 +75,7 @@ Client :
 
 - Int : ID
 - String : Nom
+- Int : Billet ID
 
 
 ## Base de donnée
