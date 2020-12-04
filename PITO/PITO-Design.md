@@ -55,13 +55,13 @@ Storage : Base de donné sqlLite
 
 Billet :
 
-- Int : ID
+- Int : ID Billet
+- Int : ID Client
 - Datetime : Date d'entrée dans l'api
 - Datetime : Date de départ du vol
 - Datetime : Date d'arrivée du vol
 - Int : Identifiant du Trajet
 - Int : Prix
-- String : User name
 
 
 Trajet :
@@ -75,7 +75,6 @@ Client :
 
 - Int : ID
 - String : Nom
-- Int : Billet ID
 
 
 ## Base de donnée
