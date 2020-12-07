@@ -18,18 +18,18 @@ FLASK_APP=main.py flask run
 
 Bibliothèque : 
 
-aniso8601==8.0.0
-click==7.1.2
-Flask==1.1.2
-Flask-RESTful==0.3.8
-Flask-SQLAlchemy==2.4.3
-itsdangerous==1.1.0
-Jinja2==2.11.2
-MarkupSafe==1.1.1
-pytz==2020.1
-six==1.15.0
-SQLAlchemy==1.3.18
-Werkzeug==1.0.1
+- aniso8601=8.0.0
+- click=7.1.2
+- Flask=1.1.2
+- Flask-RESTful=0.3.8
+- Flask-SQLAlchemy=2.4.3
+- itsdangerous=1.1.0
+- Jinja2=2.11.2
+- MarkupSafe=1.1.1
+- pytz=2020.1
+- six=1.15.0
+- SQLAlchemy=1.3.18
+- Werkzeug=1.0.1
 
 Storage : Base de donné sqlLite
 
@@ -41,9 +41,7 @@ Storage : Base de donné sqlLite
 
 127.0.0.1:5000/Ticket_id/<int:billet_id>: Afficher le billet avec l'id spécifié
 
-127.0.0.1:5000/Ticket_departure/<string:code_depart>: liste des billets avec le le lieu de départ spécifié
-
-127.0.0.1:5000/Ticket_destination/<string:code_destination>: liste des billets avec le lieu d'arrivée spécifié
+127.0.0.1:5000/Ticket_departure/<int:id_trajet>: liste des billets avec le le lieu de départ spécifié
 
 127.0.0.1:5000/Ticket_entree_api/<string:date_entree_api>: liste des billets ajoutés dans l'api à la date correspondante
 
@@ -53,26 +51,31 @@ Storage : Base de donné sqlLite
 
 127.0.0.1:5000/Ticket_price/<string:price>: liste des billets selon le prix spécifié
 
-## Modèle de donnée
+##  Entité du Modèle logique de données implémenté
 
 Billet :
 
-- Int : ID
+- Int : ID Billet
+- Int : ID Client
+- Int : ID Trajet
 - Datetime : Date d'entrée dans l'api
 - Datetime : Date de départ du vol
 - Datetime : Date d'arrivée du vol
-- Boolean : Reservation
-- String : Code de départ 
-- String : Code de destination
 - Int : Prix
-- String : User name
 
 
 Trajet :
 
-- Int : ID
+- Int : ID Trajet
+- Int : Stock
 - String : Code_Destination
 - String : Code_Depart
+
+Client :
+
+- Int : ID Client
+- String : Nom
+
 
 ## Base de donnée
 
