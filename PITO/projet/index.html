@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Pito Airline
+        </title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <h1>Welcome to Pito Airline</h1>
+        <h2>Please Register</h2>
+        <p>Mail : <input type="text" id="regmail"></p>
+        <p>Name : <input type="text" id="name"></p>
+        <p>Nationality : <input type="text" id="nation"></p>
+        <button id="register">Register</button>
+        <h2>Please Login</h2>
+        <p>Mail : <input type="text" id="mail"></p>
+        <button id="login">Login</button>
+        <h2>Booked Flights :</h2>
+        <ul id="booked"></ul>
+        <h2>Book a new Flight :</h2>
+        <input type="date" id="date" name="Date">
+        <select id ="flightList">
+            <option value="null" selected>Selelect a flight by code</option>
+        </select>
+        <ul id="booking"></ul>
+        <button id="test">test</button>
+        <script src="./node_modules/jquery/dist/jquery.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
