@@ -26,19 +26,19 @@ FLASK_APP=main.py flask run
 
 Bibliothèque : 
 
-- aniso8601==8.0.0
-- click==7.1.2
-- Flask==1.1.2
-- flask-restful==0.3.8
-- flask_sqlalchemy==2.4.3
-- flask-cors==3.0.9
-- itsdangerous==1.1.0
-- Jinja2==2.11.2
-- MarkupSafe==1.1.1
-- pytz==2020.1
-- six==1.15.0
-- flask_sqlalchemy==1.3.18
-- Werkzeug==1.0.1
+- aniso8601=8.0.0
+- click=7.1.2
+- Flask=1.1.2
+- flask_restful=0.3.8
+- flask_sqlalchemy=2.4.3
+- flask-cors=3.0.9
+- itsdangerous=1.1.0
+- Jinja2=2.11.2
+- MarkupSafe=1.1.1
+- pytz=2020.1
+- six=1.15.0s
+- flask_sqlalchemy=1.3.18
+- Werkzeug=1.0.1
 
 Storage : Base de donné sqlLite
 
