@@ -46,21 +46,19 @@ Storage : Base de donné sqlLite
 
 ## End point
 
-127.0.0.1:5000/Ticket/<int:Ticket_id> : Post sur le billet avec l'id correspondant on change alors la valeur de la réservation à true et le nom de l'utilisateur
+127.0.0.1:5000/tickets
 
-127.0.0.1:5000/Tickets: liste de tous les billets
+127.0.0.1:5000/clients
 
-127.0.0.1:5000/Ticket_id/<int:billet_id>: Afficher le billet avec l'id spécifié
+127.0.0.1:5000/book/<string:code>?<string:id>
 
-127.0.0.1:5000/Ticket_departure/<int:id_trajet>: liste des billets avec le le lieu de départ spécifié
+127.0.0.1:5000/clients/add
 
-127.0.0.1:5000/Ticket_entree_api/<string:date_entree_api>: liste des billets ajoutés dans l'api à la date correspondante
+127.0.0.1:5000/tickets/date/<string:date>
 
-127.0.0.1:5000/Ticket_departure_date/<string:date_departure>: liste des billets pour un départ à la date spécifiée
+127.0.0.1:5000/tickets/code/<string:code>
 
-127.0.0.1:5000/Ticket_arrival_date/<string:date_arrival>:liste des billets pour une arrivée à la date spécifiée
-
-127.0.0.1:5000/Ticket_price/<string:price>: liste des billets selon le prix spécifié
+127.0.0.1:5000/clients/<string:mail>
 
 ## Base de donnée
 
