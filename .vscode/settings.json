@@ -1,5 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\Yannis\\anaconda3\\python.exe",
     "python.linting.pylintArgs": [
         "--load-plugins",
         "pylint_flask_sqlalchemy",
