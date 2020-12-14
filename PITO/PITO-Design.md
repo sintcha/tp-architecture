@@ -2,6 +2,8 @@
 
 ## Démo 
 
+![Features](static/demo.png)
+![Features](static/demo2.png)
 ## BDD : Entité du Modèle logique de données implémenté
 ![Features](static/table-client.png)
 ![Features](static/table-flight.png)
