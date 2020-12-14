@@ -171,18 +171,6 @@ class Find_Ticket_by_max_price(Resource):
 			abort(404, message="Could not find Ticket with that arrival date")
 		return result
 
-#  class Find_available_departure(Resource):
-#  	@marshal_with(resource_fields_code)
-#  	def get(self):
-#  		allCodes = CodeModel.query.filter_by().all()
-# 		result = Flight.query.filter_by(code_destination=code_destination).all()
-
-		
-#  		for i in range(len(allCodes)) :
-#  			if print(allCodes[i].code)
-#  		if not allCodes:
-#  			abort(404, message="Could not find Codes")
-#  		return allCodes
 
 class All_Ticket(Resource):
 	@marshal_with(resource_fields)
@@ -233,21 +221,22 @@ class Add_Client(Resource):
 		db.session.commit()
 		return client, 201
 
-api.add_resource(Ticket, "/Ticket/<int:Ticket_id>")
+class Book(Resource):
+	@marshal_with(resource_fields)
+	def get(self, code, id):
+		flight = Flight.query.filter_by(code=code).first()
+		client = Client.query.filter_by(mail=mail).first()
+		client.tickets.append(flight)
+		db.session.commit()
+
+
 api.add_resource(All_Ticket, "/tickets")
 api.add_resource(All_Client, "/clients")
+api.add_resource(Book, "/book/<string:code>?<string:id>")
 api.add_resource(Add_Client, "/clients/add")
 api.add_resource(Find_Ticket_by_date, "/tickets/date/<string:date>")
 api.add_resource(Find_Ticket_by_code, "/tickets/code/<string:code>")
 api.add_resource(Find_client_by_mail, "/clients/<string:mail>")
-#api.add_resource(Find_available_departure, "/available_departure")
-api.add_resource(Find_Ticket_by_id, "/Ticket_id/<int:Ticket_id>")
-#api.add_resource(Find_Ticket_by_dep, "/Ticket_departure/<string:code_depart>")
-#api.add_resource(Find_Ticket_by_dest, "/Ticket_destination/<string:code_destination>")
-api.add_resource(Find_Ticket_by_date_dep, "/Ticket_departure_date/<string:date_departure>")
-api.add_resource(Find_Ticket_by_date_arr, "/Ticket_arrival_date/<string:date_arrival>")
-api.add_resource(Find_Ticket_by_max_price, "/Ticket_price/<string:price>")
-
 
 
 if __name__ == "__main__":
