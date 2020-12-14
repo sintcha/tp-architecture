@@ -46,19 +46,19 @@ Storage : Base de donné sqlLite
 
 ## End point
 
-127.0.0.1:5000/tickets
+- 127.0.0.1:5000/tickets
 
-127.0.0.1:5000/clients
+- 127.0.0.1:5000/clients
 
-127.0.0.1:5000/book/<string:code>?<string:id>
+- 127.0.0.1:5000/book/<string:code>?<string:id>
 
-127.0.0.1:5000/clients/add
+- 127.0.0.1:5000/clients/add
 
-127.0.0.1:5000/tickets/date/<string:date>
+- 127.0.0.1:5000/tickets/date/<string:date>
 
-127.0.0.1:5000/tickets/code/<string:code>
+- 127.0.0.1:5000/tickets/code/<string:code>
 
-127.0.0.1:5000/clients/<string:mail>
+- 127.0.0.1:5000/clients/<string:mail>
 
 ## Base de donnée
 
